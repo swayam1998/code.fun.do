@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  
+  <style>
+    textarea {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+    <div class="well">
+    
+
+    <div class="text-center">
+            <form onsubmit="parseYtUrl('ace')" action="javascript:void(0);">
+                Paste the YouTube URL here to get started! <br>
+                <input type="text" name="id" id="urlid" autocomplete="off" size = "70"/>&nbsp;<input type="submit" value="GO!">
+            </form>
+        </div> 
+
+
+
+      
+<script>
+
+
+
+        function parseYtUrl(target) {
+            var youtube_id, targetPage, url;
+            if (target === "ace") {
+                var targetPage = "http://www.diycaptions.com/php/start.php?id=";
+        url = document.getElementById("urlid").value;
+            }
+
+                       
+            //xindow.console.log("parseYtUrl called");
+            
+            //xindow.console.log(url);
+            //xlert(url.length);
+            if (url.length !== 11) {
+                var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+                var match = url.match(regExp);
+                window.console.log(match[2]);
+                if (match && match[2].length == 11) {
+                    youtube_id = match[2];
+                } 
+            } else {
+                youtube_id = url;
+            }    
+
+               document.getElementById("videoFr").src="https://www.youtube.com/embed/"+youtube_id;
+               document.getElementById("getSubs").data="http://diycaptions.com/php/get-automatic-captions-as-txt.php?id="+youtube_id +"&language=en" ;
+
+               var subText=document.getElementById("getSubs").value;
+               document.getElementById("printSub").value=subText;
+
+
+            getYTProperties(youtube_id);
+            window.open(targetPage + youtube_id);
+        }
+    </script>
+  
+<iframe id="videoFr" width="560" height="315" src="https://www.youtube.com/embed/UjtOGPJ0URM" frameborder="0" allowfullscreen></iframe><br>
+
+<div>
+<object type="text/html" width="1100" height="315" id="getSubs" >English</object><br>
+</div>
+
+<div><p id="printSub"></p></div>
+
+</body>
+</html>
+

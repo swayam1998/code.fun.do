@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<iframe width="680" height="780" src="https://www.videobreakdown.com/embed/insights/15f91358fb" frameborder="0" allowfullscreen="true"></iframe>
+
+
+
+<script src="https://breakdown.blob.core.windows.net/public/amp-vb.plugin.js">
+    function initSource() {
+     var tracks = [{
+    kind: 'captions',
+    // Here is how to load vtt from VI, you can replace it with your vtt url.
+    src: this.getSubtitlesUrl("c4c1ad4c9a", "English"),
+    srclang: 'en',
+    label: 'English'
+     }];
+
+     myPlayer.src([
+    {
+        "src": "https://www.youtube.com/watch?v=1prhCWO_518&index=6&list=RDSDTZ7iX4vTQ",
+        "type": "application/vnd.ms-sstr+xml"
+    }
+     ], tracks);
+ }
+
+ // Init your AMP instance
+ var myPlayer = amp('vid1', { /* Options */
+     "nativeControlsForTouch": false,
+     autoplay: true,
+     controls: true,
+     width: "640",
+     height: "400",
+     poster: "",
+     plugins: {
+    videobreakedown: {}
+     }
+ }, function () {
+     // Activate the plugin
+     this.videobreakdown({
+    videoId: "c4c1ad4c9a",
+    syncTranscript: true,
+    syncLanguage: true
+     });
+
+     // Set the source dynamically
+     initSource.call(this);
+ });
+</script>
+
+</body>
+</html>

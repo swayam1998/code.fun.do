@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>DIYCaptions - Home</title>
+	<base target="_blank">
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="http://www.diycaptions.com/css/umantouch-07.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- Previous block from http://www.w3schools.com/bootstrap/bootstrap_get_started.asp -->
+    <script>
+function getYTProperties(youtube_id) {
+    $.ajax({
+            type:"GET",
+            url:"http://gdata.youtube.com/feeds/api/videos/"+youtube_id+ "?v=2&fields=published,title,author",
+            dataType:"xml",
+            success: function(ytdata) {
+                //popupObj = $('.yt-vid-popup')
+     
+                var title = $('title', ytdata).text()
+                var published =  new Date( $('published',ytdata).text() )
+                var channel = $('author name', ytdata).text()
+                window.console.log(title, published, channel);
+        },
+		error: function() {
+
+		},
+		complete: function() {
+
+		}
+	})
+}
+        function parseYtUrl(target) {
+            var youtube_id, targetPage, url;
+            if (target === "ace") {
+                var targetPage = "http://www.diycaptions.com/php/start.php?id=";
+				url = document.getElementById("urlid").value;
+            }
+
+                       
+            //xindow.console.log("parseYtUrl called");
+            
+            //xindow.console.log(url);
+            //xlert(url.length);
+            if (url.length !== 11) {
+                var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+                var match = url.match(regExp);
+                window.console.log(match[2]);
+                if (match && match[2].length == 11) {
+                    youtube_id = match[2];
+                } 
+            } else {
+                youtube_id = url;
+            }    
+            getYTProperties(youtube_id);
+            window.open(targetPage + youtube_id);
+        }
+    </script>
+	<!--Start of Tawk.to Script-->
+	<script type="text/javascript">
+		var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+		(function(){
+			var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+			s1.async=true;
+			s1.src='https://embed.tawk.to/59a5e3407ab2de3aea9d733f/default';
+			s1.charset='UTF-8';
+			s1.setAttribute('crossorigin','*');
+			s0.parentNode.insertBefore(s1,s0);
+		})();
+	</script>
+<!--End of Tawk.to Script-->
+	
+</head>
+
+<body>
+   <div class="text-center">
+            <form onsubmit="parseYtUrl('ace')" action="javascript:void(0);">
+                Paste the YouTube URL here to get started! <br>
+                <input type="text" name="id" id="urlid" autocomplete="off" size = "70"/>&nbsp;<input type="submit" value="GO!">
+            </form>
+        </div>        
+</body>
+</html>

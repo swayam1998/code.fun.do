@@ -11,7 +11,8 @@ var Vindexer = function(apikey) {
 
 Vindexer.prototype.getAccounts = function() {
     return _Request.getAsync({
-        url: `${apiurl}/Accounts`,
+        url: `${apiurl}/Accounts`,1`
+        
         headers: { "Ocp-Apim-Subscription-Key": this.apiKey }
     })
 }

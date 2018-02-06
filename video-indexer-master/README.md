@@ -23,19 +23,19 @@ This Node.js module is still under development; it has been tested but is not gu
 
 ## Usage
 
-Grab a free API key by signing up [here](https://videobreakdown.portal.azure-api.net/get-started) and clicking on your account name, then "Profile." Replace "your_api_key" below with the API key for local testing. 
+Grab a free API key by signing up [here](https://videobreakdown.portal.azure-api.net/get-started) and clicking on your account name, then "Profile." Replace "your_api_key" below with the API key for local testing.
 
 ```javascript
 const vindexer = require("video-indexer");
-const Vindexer = new vindexer("your_api_key");
+const Vindexer = new vindexer("e6347012609748ba81510b4a8d4192db");
 
 // Upload video via a URL and generate intelligent insights. If no URL is specified, the file should be passed as a multipart/form body content.
 Vindexer.uploadVideo({
     // Optional
     videoUrl: "http_://_video_url_dot_/video.mp4",
     name: 'My video name',
-    privacy: 'Private', 
-    language: 'English', 
+    privacy: 'Private',
+    language: 'English',
     externalId: 'customvideoid',
     description: 'Check out this great demo video!',
     partition: 'demos'
@@ -61,7 +61,7 @@ Vindexer.getProcessingState("your_video_id")
     .then( function(result){ console.log (result.body) } );
 
 // Search for videos within your own account
-// If you want to test with a publicly-available dataset instead, 
+// If you want to test with a publicly-available dataset instead,
 // set searchInPublicAccount to true
 Vindexer.search({
     // Optional
@@ -85,7 +85,7 @@ Vindexer.getPlayerWidgetUrl("your_video_id")
 
 // Get insights widget
 Vindexer.getInsightsWidgetUrl("your_video_id", {
-    // Optional. Other widget types are 'People', 'Sentiment', and 'Search'. 
+    // Optional. Other widget types are 'People', 'Sentiment', and 'Search'.
     // If left unspecified, the widget will include all insight types
     widgetType: 'Keywords'
 })
@@ -122,5 +122,3 @@ Vindexer.deleteBreakdown("your_video_id", {
 });
 
 ```
-
-

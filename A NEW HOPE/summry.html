@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Online summarize tool (free summarizing)</title>
+<link rel="stylesheet" href="//www.tools4noobs.com/css/main-combined.css" />
+<script src="//www.tools4noobs.com/js/main-combined.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+  
+<div class="row">    
+<div class="span9">
+
+  <form action="//www.tools4noobs.com/" name="f1" method="post" onsubmit="return do_submit()" class="form-horizontal slim-form">
+    <input type="hidden" name="action" value="ajax_summarize" />
+
+        <div class="row">
+          <div class="span9">
+
+    <label for="url" id="labelurl">URL:</label>
+    <input type="text" name="url" id="url" size="40" value="" class="span6" />
+           </div>
+            </div>
+
+    
+    
+
+    <div  onsubmit="do_submit()" style="clear: both;text-align: center; margin: auto; margin-bottom: 20px;">
+          <input  type="submit" value="go" class="btn btn-primary" />
+    </div>
+
+    </form>
+    
+    <div id="result"></div>
+
+</div>
+
+
+
+        
+
+
+</div>
+        
+<script src="jquery.ui.min.js"></script>
+
+<script type="text/javascript">
+function showhide(state)
+{
+    options_div = $("#options");
+    optionssel_div = $("#optionssel");
+    
+    if (null == state || typeof(state) === 'undefined') {
+        state = !options_div.is(":visible");
+    }
+
+    if (state) {
+        text = 'Hide options';
+        options_div.show();
+    } else {
+        text = 'Show options';
+        options_div.hide();
+    }
+    
+    optionssel_div.html("<a href=\"#\" onclick=\"return showhide()\">" + text + "</a>");
+    
+    return false;
+}
+
+function toggle_best_words()
+{
+    best_words_div = $("#show_best_words");
+    num_best_words_div = $("#num_best_words");
+    
+    state = best_words_div.is(":checked");
+    
+    if (state) {
+        num_best_words_div.show();
+    } else {
+        num_best_words_div.hide();
+    }
+    
+    return false;
+}
+
+function do_submit()
+{
+    showhide(false);
+    
+    $('#result').html('<div class="progress progress-striped active"><div class="bar"style="width: 100%;"></div></div>');
+
+    $.ajax({
+      type: 'POST',
+        url: '',
+        data: 
+        {
+          action:'ajax_summarize',
+          url:$('#url').val(),
+          text:$('#text').val(),
+          threshold:$('#threshold').val(),
+          treshold_lines:$('#treshold_lines').val(),
+          min_sentence_length:$('#min_sentence_length').val(),
+          min_word_length:$('#min_word_length').val(),
+          show_relevance:$('#show_relevance').attr('checked'),
+          show_best_words:$('#show_best_words').attr('checked'),
+          first_best:$('#first_best').val(),
+          show_keyheigh:$('#show_keyheigh').attr('checked'),
+          show_sentences:$('#show_sentences').attr('checked')
+        },
+        success: function(data) {
+          $('#result').html(data);
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            $('#result').html("<div class=\"alert alert-error\"> Error " + xhr.status + ": " + thrownError + "</div>");
+        }
+      });
+
+      return false;
+}
+
+
+function repositionTooltip( e, ui )
+{
+    var div = $(ui.handle).data("tooltip").$tip[0];
+    var pos = $.extend({}, $(ui.handle).offset(), { width: $(ui.handle).get(0).offsetWidth,
+                                                    height: $(ui.handle).get(0).offsetHeight
+              });
+
+    var actualWidth = div.offsetWidth;
+
+    tp = {left: pos.left + pos.width / 2 - actualWidth / 2}
+    $(div).offset(tp);
+
+    $(div).find(".tooltip-inner").text( ui.value );
+}
+
+/*initialize the slider*/
+$(function() 
+{
+    $("#fld_slider").slider({
+        range: "min",
+        value: 70,
+        min: 1,
+        max: 100,
+        slide: function(event, ui) 
+        {
+            $("#threshold").val(ui.value);
+            repositionTooltip(event, ui);
+        },
+        stop: repositionTooltip
+    });
+    $("#fld_slider .ui-slider-handle:first").tooltip({
+        title: $("#fld_slider").slider("value"),
+        trigger: "manual"
+    }).tooltip("show");
+    $("#threshold").hide();
+    $("#threshold").val($("#fld_slider").slider("value"));
+});
+
+</script><hr />
+
+
+
+<script>
+$(window).load(function() {
+    $("#totop").click(function () {
+        $("body, html").animate({
+            scrollTop: 0
+        }, 300);
+        return false;
+    }); 
+});
+</script>
+
+</body>
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://api.flattr.com/js/0.6/load.js?mode=auto';
+        t.parentNode.insertBefore(s, t);
+    })();
+/* ]]> */</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-254450-13', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</html>
