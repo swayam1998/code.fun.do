@@ -27,7 +27,7 @@
 
 </head>
 
-<body>
+
             
         <script type="text/javascript">
             $(document).ready(initJS);
@@ -267,10 +267,10 @@ Summarizer.Utility.runPageRankOnce = function (graph, pageRankStruct,
 
 
 
-
-
-    <nav class="navbar navbar-inverse navbar-toggleable-sm  fixed-top ">
+<body>
     <div class="container">
+    <nav class="navbar navbar-inverse navbar-toggleable-sm  fixed-top ">
+    
         
         <button class="navbar-toggler " type= "button" data-toggle="collapse" data-target="#Navbar">
                 <span class="navbar-toggler-icon"></span>   
@@ -282,7 +282,7 @@ Summarizer.Utility.runPageRankOnce = function (graph, pageRankStruct,
                 <li style="visibility: hidden;" class="nav-item "><a class="nav-link" href="./homePage.html"><span class="fa fa-home"></span> Ho</a></li>
                 <li class="nav-item "><a class="nav-link" href="./homePage.html"><span class="fa fa-home"></span> Home</a></li>
                 <li class="nav-item "><a class="nav-link" href="./videoSummarizer.html"><span class="fa fa-play "></span> Video</a></li>
-                <li class="nav-item"><a class="nav-link" href="speechSummarizer.html"><span class="fa fa-microphone "></span> Speech</a></li>
+                <li class="nav-item"><a class="nav-link" href="./speechSummarizer.html"><span class="fa fa-microphone "></span> Speech</a></li>
                 <li class="nav-item"><a class="nav-link" href="./imageSummarizer.html"><span class="fa fa-image"></span> Image</a></li>
                 <li class="nav-item active"><a class="nav-link" href="./textSummarizer.html"><span class="fa fa-file"></span> Text</a></li>
                  <li class="nav-item "><a class="nav-link" href="./savedsmmry.html"><span class="fa fa-file"></span> SavedSummary</a></li>
@@ -362,6 +362,8 @@ Summarizer.Utility.runPageRankOnce = function (graph, pageRankStruct,
                         </div>
                     </div>
 
+                    <br>
+
        
 
     </div>
@@ -424,7 +426,6 @@ Summarizer.Utility.runPageRankOnce = function (graph, pageRankStruct,
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
 <script>
-  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyB31Yjc9qDsJmqZhCKlMQk8_e7xRfXKz10",
     authDomain: "codefundo2k18.firebaseapp.com",
@@ -435,10 +436,7 @@ Summarizer.Utility.runPageRankOnce = function (graph, pageRankStruct,
   };
   firebase.initializeApp(config);
 </script>
-
-
-
-    <script type="text/javascript" src="./index.js"></script>
+ <script type="text/javascript" src="./index.js"></script>
     
 
 </body>

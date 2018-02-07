@@ -148,7 +148,7 @@
                         <div class="control-group">
                             <div class="controls">
                                     <div class="row">
-                                     <textarea  rows="12" class="col" class="input-xlarge" id="output1">Expect the generated summary here...</textarea>
+                                     <textarea  rows="12" class="col" class="input-xlarge" id="output2">Expect the generated summary here...</textarea>
                                     </div>
                             </div>
                         </div>
@@ -157,6 +157,14 @@
             </div>
         </div>
 
+        <br>
+
+
+         <div class=" row">
+                        <div class="offset-5 col-sm-2 center-block text-center " align="">
+                            <a href="#output1"><button  id="summarizeButton" onclick="textStore2()" class=" button btn btn-primary" hre>&nbsp Save &nbsp</button></a>
+                        </div>
+                    </div>
 
        
 
@@ -248,7 +256,21 @@
             window.open(targetPage + youtube_id);
         }
     </script>
-
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+<script>
+  var config = {
+    apiKey: "AIzaSyB31Yjc9qDsJmqZhCKlMQk8_e7xRfXKz10",
+    authDomain: "codefundo2k18.firebaseapp.com",
+    databaseURL: "https://codefundo2k18.firebaseio.com",
+    projectId: "codefundo2k18",
+    storageBucket: "codefundo2k18.appspot.com",
+    messagingSenderId: "85488551038"
+  };
+  firebase.initializeApp(config);
+</script>
+ <script type="text/javascript" src="./index.js"></script>
 
 
 

@@ -15,13 +15,13 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     //var user = firebase.auth().currentUser;
 
-    if(user != null){
+    /*if(user != null){
       var UserUid = user.uid;
       var email_id = user.email;
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
 
      
-    }
+    }*/
 
   } else {
     // No user is signed in.
@@ -90,7 +90,7 @@ function signUp() {
 
   var firestore = firebase.firestore();
   var user = firebase.auth().currentUser;
-  //var list_div = document.querySelector("#list_div");
+  var list_div = document.querySelector("#list_div");
   var  UserUid;
       // var smrybtn = document.getElementById("smmrize").value;
      
@@ -117,12 +117,77 @@ function signUp() {
 
 });
 }
+function textStore2() {
+        var text = document.getElementById("output2").value;
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user && text != "") {
+           var UserUid = user.uid;
+           var docRef = firestore.collection('Users').doc(UserUid).collection('Text');
+               docRef.add({
+                TextSummary : text,
+                return: true
+            }).then(function(){
+            console.log("Text saved!");
+            }).catch(function(error){
+               console.log("Got an error", error);
+           });
+        //$('textarea').filter('[id*=textInput]').val('');
+
+   }else{console.log("Errors")}
+
+ //var text = document.getElementById("textInput").val('');
+
+});
+}
+function textStore3() {
+        var text = document.getElementById("output3").value;
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user && text != "") {
+           var UserUid = user.uid;
+           var docRef = firestore.collection('Users').doc(UserUid).collection('Text');
+               docRef.add({
+                TextSummary : text,
+                return: true
+            }).then(function(){
+            console.log("Text saved!");
+            }).catch(function(error){
+               console.log("Got an error", error);
+           });
+        //$('textarea').filter('[id*=textInput]').val('');
+
+   }else{console.log("Errors")}
+
+ //var text = document.getElementById("textInput").val('');
+
+});
+}
+function textStore4() {
+        var text = document.getElementById("output4").value;
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user && text != "") {
+           var UserUid = user.uid;
+           var docRef = firestore.collection('Users').doc(UserUid).collection('Text');
+               docRef.add({
+                TextSummary : text,
+                return: true
+            }).then(function(){
+            console.log("Text saved!");
+            }).catch(function(error){
+               console.log("Got an error", error);
+           });
+        //$('textarea').filter('[id*=textInput]').val('');
+
+   }else{console.log("Errors")}
+
+ //var text = document.getElementById("textInput").val('');
+
+});
+}
         
     function authentication(){
 
 
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
+
       var user = firebase.auth().currentUser;
         var UserUid = user.uid;
        var docRef = firestore.collection('Users').doc(UserUid).collection('Text');
@@ -132,15 +197,14 @@ firebase.auth().onAuthStateChanged(function(user) {
               console.log(UserUid);
               list_div.innerHTML += "<div class='list-item'><h3>" +change.doc.data().TextSummary + "</h3></div>"
 
+             }else{
+              console.log("Erorrs");
              }
 
            });
          });
     }
 
-
-});
-}
 // function Savedsmmry(){
 // var user = firebase.auth().currentUser;
 // var UserUid = user.uid;
