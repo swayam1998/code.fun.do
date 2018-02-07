@@ -19,6 +19,9 @@
  </head>
 <body>
 
+<script type="text/javascript">
+	authentication();
+</script>
 
 
 <nav class="navbar navbar-inverse navbar-toggleable-sm  fixed-top ">
@@ -32,17 +35,17 @@
         <div class="collapse navbar-collapse"  id="Navbar">
             <ul class="navbar-nav" >
             	<li style="visibility: hidden;" class="nav-item "><a class="nav-link" href="./homePage.html"><span class="fa fa-home"></span> Ho</a></li>
-                <li class="nav-item active"><a class="nav-link" href="./homePage.html"><span class="fa fa-home"></span> Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="./homePage.html"><span class="fa fa-home"></span> Home</a></li>
                 <li class="nav-item "><a class="nav-link" href="./videoSummarizer.html"><span class="fa fa-play "></span> Video</a></li>
                  <li class="nav-item "><a class="nav-link" href="speechSummarizer.html"><span class="fa fa-microphone "></span> Speech</a></li>
                  <li class="nav-item"><a class="nav-link" href="./imageSummarizer.html"><span class="fa fa-image"></span> Image</a></li>
                 <li class="nav-item "><a class="nav-link" href="./textSummarizer.html"><span class="fa fa-file"></span> Text</a></li>
-                <li class="nav-item "><a class="nav-link" href="./savedsmmry.html"><span class="fa fa-file"></span> SavedSummary</a></li>
+                <li class="nav-item active"><a class="nav-link" href="./savedsmmry.html"><span class="fa fa-file"></span> SavedSummary</a></li>
                 <li style="visibility: hidden;" class="nav-item "><a class="nav-link" href="./homePage.html"><span class="fa fa-home"></span> Ho</a></li>
 
-                <li class="nav-item " id="login-li"><a data-toggle="modal" data-target="#loginModal" class="nav-link" ><span class="fa fa-sign-in"></span> <span id="loginIcon" >Login</span></a></li>
+                <!-- <li class="nav-item " id="login-li"><a data-toggle="modal" data-target="#loginModal" class="nav-link" ><span class="fa fa-sign-in"></span> <span id="loginIcon" >Login</span></a></li>
 
-                <li class="nav-item " id="logout-li"><a class="nav-link" ><span class="fa fa-sign-in"></span> <span onclick="logout()" id="logoutIcon" >Logout</span></a></li>
+                <li class="nav-item " id="logout-li"><a class="nav-link" ><span class="fa fa-sign-in"></span> <span onclick="logout()" id="logoutIcon" >Logout</span></a></li> -->
                
                
             </ul>
@@ -87,37 +90,18 @@
         </div>
     </div>
 
-<header class="jumbotron ">
-	 <div class="container">
-		<div class="row row-header">
-			
-			<div class="col-12 offset-sm-3 col-sm-6">
-	 			<h1>inBrief</h1><br>
-	 			<p>is a summarizing tool, which not only provides the user<br/>with text summary but also enables them to go through<br/> videos without having to see them, just by creating summary<br/> for them</p>
-	 		</div>
 
-	 		
+<div class="main-list" id="list_div">
+   <!--  <div class="list-item">
 
-			
-   		</div>
-   	 </div>
+      <h3></h3>
+      <button id="deletebtn" class="delete-div">Delete</button>
+    </div> -->
 
-</header>
+  </div>  
 
 	
 
-		
-           
-
-
-		
-
-	<div class="container" id="reservation">
-		
-	</div>
-
-
-	</div>
 
 <footer class="footer footerstyle">
         <div style="visibility: hidden" class="container">
@@ -200,6 +184,7 @@
         $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
          });
+   
     </script>
      <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
