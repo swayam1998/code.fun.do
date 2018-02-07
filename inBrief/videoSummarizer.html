@@ -45,7 +45,7 @@
                  <li class="nav-item"><a class="nav-link" href="speechSummarizer.html"><span class="fa fa-microphone "></span> Speech</a></li>
                  <li class="nav-item "><a class="nav-link" href="./imageSummarizer.html"><span class="fa fa-image"></span> Image</a></li>
                 <li class="nav-item"><a class="nav-link" href="./textSummarizer.html"><span class="fa fa-file"></span> Text</a></li>
-                 <li class="nav-item "><a class="nav-link" href="./textSummarizer.html"><span class="fa fa-file"></span> SavedSummary</a></li>
+                 <li class="nav-item "><a class="nav-link" href="./savedsmmry.html"><span class="fa fa-list"></span> Board</a></li>
                
             </ul>
         </div>
@@ -57,14 +57,17 @@
 
     <div class="container contentstyle">
         <br> 
+        <br>
+        <br>
+        <br>
         <div class="row">
             <ol class="col-12 breadcrumb">
                 <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
                 <li class="breadcrumb-item active">Video</li>                
             </ol>
 
-            <div class="col-12">
-               <h3>Video Summarizer</h3>
+            <div class="col-12" >
+               <h3 style="color: #FFFFFF">Video Summarizer</h3>
                <hr>
             </div>
         </div>
@@ -73,7 +76,7 @@
                <div class="col-12">
                 <form onsubmit="parseYtUrl('ace')" action="javascript:void(0);">
                     <div class=" form-group row">
-                        <label for="firstname" class="col- col-form-label " style="font-weight: bold;font-size: 20px" >&nbsp &nbsp  URL:</label>
+                        <label for="firstname" class="col- col-form-label " style="color= #FFFFFF ;font-weight: bold;font-size: 20px" >&nbsp &nbsp  URL:</label>
                         <div class="col-md-6">
                             <input type="text" class="form-control" name="id" id="urlid" autocomplete="off" size = "70" >
                             
@@ -148,7 +151,7 @@
                         <div class="control-group">
                             <div class="controls">
                                     <div class="row">
-                                     <textarea  rows="12" class="col" class="input-xlarge" id="output2">Expect the generated summary here...</textarea>
+                                     <textarea  rows="12" class="col" class="input-xlarge" id="output1">Expect the generated summary here...</textarea>
                                     </div>
                             </div>
                         </div>
@@ -162,53 +165,51 @@
 
          <div class=" row">
                         <div class="offset-5 col-sm-2 center-block text-center " align="">
-                            <a href="#output1"><button  id="summarizeButton" onclick="textStore2()" class=" button btn btn-primary" hre>&nbsp Save &nbsp</button></a>
+                            <a href="#output1"><button  id="summarizeButton" onclick="textStore()" class=" button btn btn-primary" hre>&nbsp Save &nbsp</button></a>
+                            
                         </div>
                     </div>
 
        
-
+<br>
     </div>
 
     <footer class="footer footerstyle">
-        <div style="visibility: hidden" class="container">
-            <div class="row">             
+        <div class="container">
+            <div class="row">
                 <div class="col-5 offset-1 col-sm-2">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="contactus.html">Contact</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="./videoSummarizer.html">Video</a></li>
+                        <li><a href="./speechSummarizer.html">Speech</a></li>
+                        <li><a href="./imageSummarizer.html">Image</a></li>
+                        <li><a href="./textSummarizer.html">Text</a></li>
+                        <li><a href="./savedsmmry.html">Board</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-5">
-                    <h5>Our Address</h5>
+                    <h5>Made with Hardwork</h5>
                     <address>
-		              121, Clear Water Bay Road<br>
-		              Clear Water Bay, Kowloon<br>
-		              HONG KONG<br>
-		               <i class="fa fa-phone fa-lg"></i> : +852 1234 5678<br>
-                       <i class="fa fa-fax fa-lg"></i>: +852 8765 4321<br>
-                       <i class="fa fa-envelope fa-lg"></i>: <a href="mailto:confusion@food.net">confusion@food.net</a>
-		           </address>
+                      At Rajendra Bhawan,<br>
+                      IIT Roorkee<br>
+                       <i class="fa fa-phone fa-lg"></i>  &nbsp:   7978946328<br>
+                       <i class="fa fa-fax fa-lg"></i> :  9532788384<br>
+                       <i class="fa fa-envelope fa-lg"></i> : <a href="mailto:swayam1998@gmail.com">swayam1998@gmail.com</a>
+                   </address>
                 </div>
                 <div class="col-sm align-self-center">
                     <div style="text-align:center">
-                       <a class="btn btn-social-icon btn-google" href="https://google.com/+"><i class="fa fa-google-plus"></i></a>
-                        <a class="btn btn-social-icon btn-facebook "href="https://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
-                        <a class="btn btn-social-icon btn-linkedin "href="https://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
-                        <a class="btn btn-social-icon btn-twitter "href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
-                        <a class="btn btn-social-icon btn-google "href="https://youtube.com/"><i class="fa fa-youtube"></i></a>
-                        <a class="btn btn-social-icon "href="mailto:"><i class="fa fa-envelope-o"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook "href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin "href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter "href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-google "href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
                     </div>
                 </div>
            </div>
-           <div class="row justify-content-center">             
-                <div class="col-auto">
-                    <p>© Copyright 2015 Ristorante Con Fusion</p>
-                </div>
-           </div>
+           
         </div>
     </footer>
 

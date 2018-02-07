@@ -19,9 +19,15 @@ firebase.auth().onAuthStateChanged(function(user) {
       var UserUid = user.uid;
       var email_id = user.email;
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+    //cod addition
 
      
     }*/
+  }
+  if (user !=null){
+
+    var Useremail=user.email;
+    Email.innerHTML+="<span class='nav-item' style='color: #FFFF23F'  id='Email_id'>"+ Useremail + "</span>"
 
   } else {
     // No user is signed in.
@@ -117,72 +123,7 @@ function signUp() {
 
 });
 }
-function textStore2() {
-        var text = document.getElementById("output2").value;
-        firebase.auth().onAuthStateChanged(function(user) {
-          if (user && text != "") {
-           var UserUid = user.uid;
-           var docRef = firestore.collection('Users').doc(UserUid).collection('Text');
-               docRef.add({
-                TextSummary : text,
-                return: true
-            }).then(function(){
-            console.log("Text saved!");
-            }).catch(function(error){
-               console.log("Got an error", error);
-           });
-        //$('textarea').filter('[id*=textInput]').val('');
 
-   }else{console.log("Errors")}
-
- //var text = document.getElementById("textInput").val('');
-
-});
-}
-function textStore3() {
-        var text = document.getElementById("output3").value;
-        firebase.auth().onAuthStateChanged(function(user) {
-          if (user && text != "") {
-           var UserUid = user.uid;
-           var docRef = firestore.collection('Users').doc(UserUid).collection('Text');
-               docRef.add({
-                TextSummary : text,
-                return: true
-            }).then(function(){
-            console.log("Text saved!");
-            }).catch(function(error){
-               console.log("Got an error", error);
-           });
-        //$('textarea').filter('[id*=textInput]').val('');
-
-   }else{console.log("Errors")}
-
- //var text = document.getElementById("textInput").val('');
-
-});
-}
-function textStore4() {
-        var text = document.getElementById("output4").value;
-        firebase.auth().onAuthStateChanged(function(user) {
-          if (user && text != "") {
-           var UserUid = user.uid;
-           var docRef = firestore.collection('Users').doc(UserUid).collection('Text');
-               docRef.add({
-                TextSummary : text,
-                return: true
-            }).then(function(){
-            console.log("Text saved!");
-            }).catch(function(error){
-               console.log("Got an error", error);
-           });
-        //$('textarea').filter('[id*=textInput]').val('');
-
-   }else{console.log("Errors")}
-
- //var text = document.getElementById("textInput").val('');
-
-});
-}
         
     function authentication(){
 
@@ -205,6 +146,9 @@ function textStore4() {
          });
     }
 
+ function refresh(){
+  window.location="./savedsmmry.html";
+ }
 // function Savedsmmry(){
 // var user = firebase.auth().currentUser;
 // var UserUid = user.uid;
